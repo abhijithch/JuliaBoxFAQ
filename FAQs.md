@@ -196,7 +196,7 @@ The cursor will be on the first cell initially and you can write code within the
 #### How do I plot in `JuliaBox`?
 
 There are various packages available for plotting in `Julia`, viz, `Gadfly`, `Plotlyjs`, `Pyplot`, `Plots` among others. `Plots`
-is an interface to many of the other plotting libraries which act as backend. To create plots using `Plots` you have to select a backend, e.x., to select Plotlyjs, run `plotly()`,
+is an interface to many of the other plotting libraries which act as backend. To create plots using `Plots` you have to select a backend, e.x., to select Plotlyjs, run `plotlyjs()`,
 
 <img src="./static/Plot1.png" alt="Drawing" style="width:1000px;"/>
 
