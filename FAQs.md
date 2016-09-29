@@ -9,7 +9,7 @@
 There are three methods of using Julia,
 
 1. Visit [JuliaBox](https://juliabox.com/), login with gmail or linked or github
- account and open a new notebook, preferably `0.4.6` kernel.
+ account and open a new notebook, preferably `0.5.0` kernel.
 2. Install [`Julia`](http://julialang.org/downloads/) preferably the Current Release version which is `v0.5.0`.
 3. Using the Juno IDE, which can be installed using the instructions [here](https://github.com/JunoLab/uber-juno/blob/master/setup.md).
 
