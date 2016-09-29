@@ -410,6 +410,7 @@ fem=df[df[:Gender].=="Female",:]
 ```
 by(df, [:Gender], df -> mean(df[:Height]))
 ```
+
 | |Gender|x1|
 |--|--|--|
 |1|Female|64.75|
@@ -420,6 +421,7 @@ by(df, [:Gender], df -> mean(df[:Height]))
 ```
 data = DataFrame(X=[1,2,3], Y=[2,4,7])
 ```
+
 | |X|Y|
 |--|--|--|
 |1|1|2|
