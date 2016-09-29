@@ -15,7 +15,7 @@ There are three methods of using Julia,
 
 #### Are there any learning material available online?
 
-There is an abundance of learning material ranging from books, tutorial and video tutorials which can all the found [here](julialang.org/learning).
+There is an abundance of learning material ranging from books, tutorial and video tutorials which can all the found [here](http://julialang.org/learning).
 
 #### How to install a package?
 
