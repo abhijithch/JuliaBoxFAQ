@@ -15,21 +15,21 @@ There are three methods of using Julia,
 
 #### Are there any learning material available online?
 
-There is an abundance of learning material ranging from books, tutorial and video tutorials which can all the found [here](http://julialang.org/learning).
+There is an abundance of learning material ranging from books, tutorials and video tutorials which can all be found [here](http://julialang.org/learning).
 
 #### How to install a package?
 
 To install any package locally or on `JuliaBox`(which is not available by default), do Pkg.add("name_of_package").
-For e.x., if you need to install the package `JuMP` to Pkg.add("JuMP"). This is applicable to officially
+For e.x., if you need to install the package `JuMP`, do Pkg.add("JuMP"). This is applicable for all officially
 registered packages. To know more about packages refer [package docs](http://docs.julialang.org/en/release-0.4/manual/packages/).
 
 ## Basics of programming in Julia
 
 #### Julia Variables
 
-To represent the various variable or scalar quantities like temperature or its gradient, you need a storage location which is identifiable by a symbolic name. A `Variable` in Julia is this entity which lets you manipulate and store values.
+To represent variable or scalar quantities like temperature or its gradient, you need a storage location which is identifiable by a symbolic name. A `Variable` in Julia is this entity which lets you manipulate and store values.
 
-```
+```julia
 # Assign the value 10 to the variable x
 julia> x = 10
 10
@@ -84,7 +84,7 @@ In general to achieve a large objective, we need to break it down into smaller t
 
 We introduce two basic repeated evaluation mechanisms, `which` and `for` loop,
 
-```
+```julia
 julia> while i<=4
            println("$i th loop.")
            i += 1
@@ -95,9 +95,9 @@ julia> while i<=4
 4 th loop.
 ```
 
-The `while` loop evaluates the condition expression (`i <= 4` in this case), and as long it remains `true`, keeps also evaluating the body of the `while` loop. If the condition expression is `false` when the `while` loop is first reached, the body is never evaluated.
+The `while` loop evaluates the condition expression (`i <= 4` in this case), and as long it remains `true`, keeps evaluating the body of the `while` loop. If the condition expression is `false` when the `while` loop is first reached, the body is never evaluated.
 
-```
+```julia
 julia> for i = 1:4
          println(i)
        end
@@ -111,7 +111,7 @@ Here the `1:5` is a `Range` object, representing the sequence of numbers 1, 2, 3
 
 To show how to use this for a simple task of adding 10 numbers from 1:10,
 
-```
+```julia
 julia> sum=0
 0
 julia> for i=1:10
@@ -127,13 +127,13 @@ The basic datastructure to work with collection of data is an `Array` which can 
 
 The following code snippets are extracted from a Julia REPL (read-eval-print loop), which can be also run in notebook as is,
 
-```
+```julia
 julia> A = Array{Int, 2}()
 0x0 Array{Int64,2}
 ```
 
 You can check the type of an object,
-```
+```julia
 julia> typeof(A)
 Array{Int64,2}
 julia> typeof(A)==Matrix{Int}
@@ -141,14 +141,14 @@ true
 ```
 The typecheck done in the last step confirms that `A` is a `Matrix`. To declare a `Vector` (dimension=1),
 
-```
+```julia
 julia> V = Array{Int, 1}()
 0-element Array{Int64,1}
 julia> Array{Int,1}==Vector{Int}
 true
 ```
 For example to represent the color red in RGB in decimal code,
-```
+```julia
 julia>c=[255,0,0]
 3-element Array{Int64,1}:
  255
@@ -159,7 +159,7 @@ julia>c=[255,0,0]
 
 If `A` is an `Int` type array, `A=Array{Int, 1}()`, we can populate the array as follows,
 
-```
+```julia
 julia> A=Array{Int,1}()
 0-element Array{Int64,1}
 
@@ -193,12 +193,46 @@ The cursor will be on the first cell initially and you can write code within the
 
 <img src="./static/Screen2.png" alt="Drawing" style="width:1000px;"/>
 
+There is autocomplete available, key in the characters and hit `tab` button,
+
+<img src="./static/AC.png" alt="Drawing" style="width:1000px;"/>
+
+We can also have Julia to show help for functions, like for e.x., `?rand`,
+
+<img src="./static/Help.png" alt="Drawing" style="width:1000px;"/>
+
 #### How do I plot in `JuliaBox`?
 
 There are various packages available for plotting in `Julia`, viz, `Gadfly`, `Plotlyjs`, `Pyplot`, `Plots` among others. `Plots`
 is an interface to many of the other plotting libraries which act as backend. To create plots using `Plots` you have to select a backend, e.x., to select Plotlyjs, run `plotlyjs()`,
 
 <img src="./static/Plot1.png" alt="Drawing" style="width:1000px;"/>
+
+#### How can I upload data and access it in my notebook?
+
+To upload the data use the `Files` tab on the main page,  
+
+<img src="./static/Upload.png" alt="Drawing" style="width:1000px;"/>
+
+You can either drag-and-drop or use the file selection box to upload your data. ** Please note that each account has a space limit of 500MB. **
+
+#### Is it possible to share my notebook with others?
+
+It is possible to share any the notebooks through google drive, firstly you have to sync any appropriate folder on Google Drive. This can be done using the `sync` tab on the main page,
+
+<img src="./static/Gdrive.png" alt="Drawing" style="width:1000px;"/>
+
+Hit the `+` button under `Action` as shown in the above figure, this should include the folder within JuliaBox.
+
+<img src="./static/Success.png" alt="Drawing" style="width:1000px;"/>
+
+Now that we have a folder names `JuliaBox` synced to Google Drive, it is time we upload the files to be shared. The only option to transfer files to this folder is to open up a terminal and run the `cp` command,
+
+<img src="./static/CopytoJuliaBox.png" alt="Drawing" style="width:1000px;"/>
+
+After copying it is required to `sync` the folder,
+
+<img src="./static/SyncAfterCopy.png" alt="Drawing" style="width:1000px;"/>
 
 
 ## Troubleshooting :
@@ -219,6 +253,7 @@ in require at loading.jl:249
 julia> Pkg.add("DataFrames")
 fatal: your current branch 'master' does not have any commits yet
 ERROR: failed process: Process(git '--git-dir=C:\Users\user\.julia\v0.4\.cache\DataArrays' log --all --"
+
 ```
 
 In this case it most likely is due to corrupt copies of packages. First remove the `.cache` folder at present in the `JULIA_PACKAGE` directory which is `~/.julia` where `~` is the home directory. Then do a `Pkg.update()`.
