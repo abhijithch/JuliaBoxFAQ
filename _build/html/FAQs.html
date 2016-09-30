@@ -1,0 +1,924 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>FAQs &mdash; JuliaBox FAQs 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="JuliaBox FAQs 0.1 documentation" href="index.html" />
+    <link rel="prev" title="Welcome to JuliaBox FAQs’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="faqs">
+<h1>FAQs<a class="headerlink" href="#faqs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="julia-basics">
+<h2>Julia Basics<a class="headerlink" href="#julia-basics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="getting-started">
+<h3>Getting Started :<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="how-to-start-using-julia">
+<h4>How to start using Julia?<a class="headerlink" href="#how-to-start-using-julia" title="Permalink to this headline">¶</a></h4>
+<p>There are three methods of using Julia,</p>
+<ol class="arabic simple">
+<li>Visit <a class="reference external" href="https://juliabox.com/">JuliaBox</a>, login with gmail or
+linked or github account and open a new notebook, preferably
+<code class="docutils literal"><span class="pre">0.5.0</span></code> kernel.</li>
+<li>Install <code class="docutils literal"><span class="pre">`Julia</span></code> &lt;<a class="reference external" href="http://julialang.org/downloads/">http://julialang.org/downloads/</a>&gt;`__ preferably
+the Current Release version which is <code class="docutils literal"><span class="pre">v0.5.0</span></code>.</li>
+<li>Using the Juno IDE, which can be installed using the instructions
+<a class="reference external" href="https://github.com/JunoLab/uber-juno/blob/master/setup.md">here</a>.</li>
+</ol>
+</div>
+<div class="section" id="are-there-any-learning-material-available-online">
+<h4>Are there any learning material available online?<a class="headerlink" href="#are-there-any-learning-material-available-online" title="Permalink to this headline">¶</a></h4>
+<p>There is an abundance of learning material ranging from books, tutorials
+and video tutorials which can all be found
+<a class="reference external" href="http://julialang.org/learning">here</a>.</p>
+</div>
+<div class="section" id="how-to-install-a-package">
+<h4>How to install a package?<a class="headerlink" href="#how-to-install-a-package" title="Permalink to this headline">¶</a></h4>
+<p>To install any package locally or on <code class="docutils literal"><span class="pre">JuliaBox</span></code>(which is not
+available by default), do Pkg.add(&#8220;name_of_package&#8221;). For e.x., if you
+need to install the package <code class="docutils literal"><span class="pre">JuMP</span></code>, do Pkg.add(&#8220;JuMP&#8221;). This is
+applicable for all officially registered packages. To know more about
+packages refer <a class="reference external" href="http://docs.julialang.org/en/release-0.4/manual/packages/">package
+docs</a>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="basics-of-programming-in-julia">
+<h2>Basics of programming in Julia<a class="headerlink" href="#basics-of-programming-in-julia" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="julia-variables">
+<h3>Julia Variables<a class="headerlink" href="#julia-variables" title="Permalink to this headline">¶</a></h3>
+<p>To represent variable or scalar quantities like temperature or its
+gradient, you need a storage location which is identifiable by a
+symbolic name. A <code class="docutils literal"><span class="pre">Variable</span></code> in Julia is this entity which lets you
+manipulate and store values.</p>
+<div class="code julia highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Assign the value 10 to the variable x</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="mi">10</span>
+
+<span class="c1"># Doing math with x&#39;s value</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="mi">11</span>
+
+<span class="c1"># Reassign x&#39;s value</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="mi">2</span>
+
+<span class="c1"># You can assign values of other types, like strings of text</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Hello World!&quot;</span>
+<span class="s2">&quot;Hello World!&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="julia-integers-and-floating-point-numbers">
+<h3>Julia Integers and Floating-Point Numbers<a class="headerlink" href="#julia-integers-and-floating-point-numbers" title="Permalink to this headline">¶</a></h3>
+<p>Integers and floating-point values are the basic building blocks of
+arithmetic and computation. Julia provides a broad range of primitive
+numeric types, and a full complement of arithmetic and bitwise operators
+as well as standard mathematical functions are defined over them. Julia
+provides a number of primitive numeric types ranging from 8-bit to
+128-bit,</p>
+<ul class="simple">
+<li><strong>Integer types:</strong></li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="24%" />
+<col width="24%" />
+<col width="23%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Signed?</th>
+<th class="head">Number of bits</th>
+<th class="head">Smallest value</th>
+<th class="head">Largest value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Int8</td>
+<td>✓</td>
+<td>8</td>
+<td>-2^7</td>
+<td>2^7 - 1</td>
+</tr>
+<tr class="row-odd"><td>UInt8</td>
+<td>&nbsp;</td>
+<td>8</td>
+<td>0</td>
+<td>2^8 - 1</td>
+</tr>
+<tr class="row-even"><td>Int16</td>
+<td>✓</td>
+<td>16</td>
+<td>-2^15</td>
+<td>2^15 - 1</td>
+</tr>
+<tr class="row-odd"><td>UInt16</td>
+<td>&nbsp;</td>
+<td>16</td>
+<td>0</td>
+<td>2^16 - 1</td>
+</tr>
+<tr class="row-even"><td>Int32</td>
+<td>✓</td>
+<td>32</td>
+<td>-2^31</td>
+<td>2^31 - 1</td>
+</tr>
+<tr class="row-odd"><td>UInt32</td>
+<td>&nbsp;</td>
+<td>32</td>
+<td>0</td>
+<td>2^32 - 1</td>
+</tr>
+<tr class="row-even"><td>Int64</td>
+<td>✓</td>
+<td>64</td>
+<td>-2^63</td>
+<td>2^63 - 1</td>
+</tr>
+<tr class="row-odd"><td>UInt64</td>
+<td>&nbsp;</td>
+<td>64</td>
+<td>0</td>
+<td>2^64 - 1</td>
+</tr>
+<tr class="row-even"><td>Int128</td>
+<td>✓</td>
+<td>128</td>
+<td>-2^127</td>
+<td>2^127 - 1</td>
+</tr>
+<tr class="row-odd"><td>UInt128</td>
+<td>&nbsp;</td>
+<td>128</td>
+<td>0</td>
+<td>2^128 - 1</td>
+</tr>
+<tr class="row-even"><td>Bool</td>
+<td>N/A</td>
+<td>8</td>
+<td><code class="docutils literal"><span class="pre">false</span></code> (0)</td>
+<td><code class="docutils literal"><span class="pre">true</span></code> (1)</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><strong>Floating-point types:</strong></li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="31%" />
+<col width="43%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Precision</th>
+<th class="head">Number of bits</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Float16</td>
+<td>half_</td>
+<td>16</td>
+</tr>
+<tr class="row-odd"><td>Float32</td>
+<td>single_</td>
+<td>32</td>
+</tr>
+<tr class="row-even"><td>Float64</td>
+<td>double_</td>
+<td>64</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="control-flow">
+<h3>Control flow<a class="headerlink" href="#control-flow" title="Permalink to this headline">¶</a></h3>
+<p>In general to achieve a large objective, we need to break it down into
+smaller tasks and perform these in a right sequence. Similarly programs
+too need to be well formulated as a properly sequenced series of
+instructions to the computer. There are various controlling capabilities
+provided, like conditional and repeated evaluation mechanisms.</p>
+<div class="section" id="how-to-calculate-the-sum-of-10-integers-1-to-10">
+<h4>How to calculate the sum of 10 integers, 1 to 10?<a class="headerlink" href="#how-to-calculate-the-sum-of-10-integers-1-to-10" title="Permalink to this headline">¶</a></h4>
+<p>We introduce two basic repeated evaluation mechanisms, <code class="docutils literal"><span class="pre">which</span></code> and
+<code class="docutils literal"><span class="pre">for</span></code> loop,</p>
+<div class="code julia highlight-default"><div class="highlight"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="k">while</span> <span class="n">i</span><span class="o">&lt;=</span><span class="mi">4</span>
+           <span class="n">println</span><span class="p">(</span><span class="s2">&quot;$i th loop.&quot;</span><span class="p">)</span>
+           <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+       <span class="n">end</span>
+<span class="mi">1</span> <span class="n">th</span> <span class="n">loop</span><span class="o">.</span>
+<span class="mi">2</span> <span class="n">th</span> <span class="n">loop</span><span class="o">.</span>
+<span class="mi">3</span> <span class="n">th</span> <span class="n">loop</span><span class="o">.</span>
+<span class="mi">4</span> <span class="n">th</span> <span class="n">loop</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">while</span></code> loop evaluates the condition expression (<code class="docutils literal"><span class="pre">i</span> <span class="pre">&lt;=</span> <span class="pre">4</span></code> in
+this case), and as long it remains <code class="docutils literal"><span class="pre">true</span></code>, keeps evaluating the body
+of the <code class="docutils literal"><span class="pre">while</span></code> loop. If the condition expression is <code class="docutils literal"><span class="pre">false</span></code> when the
+<code class="docutils literal"><span class="pre">while</span></code> loop is first reached, the body is never evaluated.</p>
+<div class="code julia highlight-default"><div class="highlight"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">4</span>
+         <span class="n">println</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+       <span class="n">end</span>
+<span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">3</span>
+<span class="mi">4</span>
+</pre></div>
+</div>
+<p>Here the <code class="docutils literal"><span class="pre">1:5</span></code> is a <code class="docutils literal"><span class="pre">Range</span></code> object, representing the sequence of
+numbers 1, 2, 3, 4, 5. The <code class="docutils literal"><span class="pre">for</span></code> loop iterates through these values,
+assigning each one in turn to the variable <code class="docutils literal"><span class="pre">i</span></code>. One rather important
+distinction between the previous <code class="docutils literal"><span class="pre">while</span></code> loop form and the <code class="docutils literal"><span class="pre">for</span></code>
+loop form is the scope during which the variable is visible. If the
+variable <code class="docutils literal"><span class="pre">i</span></code> has not been introduced in an other scope, in the <code class="docutils literal"><span class="pre">for</span></code>
+loop form, it is visible only inside of the <code class="docutils literal"><span class="pre">for</span></code> loop, and not
+afterwards.</p>
+<p>To show how to use this for a simple task of adding 10 numbers from
+1:10,</p>
+<div class="code julia highlight-default"><div class="highlight"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="nb">sum</span><span class="o">=</span><span class="mi">0</span>
+<span class="mi">0</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="k">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span>
+           <span class="nb">sum</span> <span class="o">+=</span> <span class="n">i</span>
+       <span class="n">end</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">println</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+<span class="mi">65</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="basic-datastructures-in-julia">
+<h3>Basic datastructures in Julia<a class="headerlink" href="#basic-datastructures-in-julia" title="Permalink to this headline">¶</a></h3>
+<p>The basic datastructure to work with collection of data is an <code class="docutils literal"><span class="pre">Array</span></code>
+which can store data of type <code class="docutils literal"><span class="pre">T</span></code> in <code class="docutils literal"><span class="pre">n</span></code> dimensions, generic format
+of an array is <code class="docutils literal"><span class="pre">Array{T,</span> <span class="pre">n}</span></code>. For example if you need to store
+collection of <code class="docutils literal"><span class="pre">Int</span></code> type data in <code class="docutils literal"><span class="pre">2</span></code> dimensions, you need to declare
+<code class="docutils literal"><span class="pre">Array{Int,</span> <span class="pre">2}()</span></code> (Note the parantheses creates an object of the
+corresponding type).</p>
+<p>The following code snippets are extracted from a Julia REPL
+(read-eval-print loop), which can be also run in notebook as is,</p>
+<div class="code julia highlight-default"><div class="highlight"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">A</span> <span class="o">=</span> <span class="n">Array</span><span class="p">{</span><span class="n">Int</span><span class="p">,</span> <span class="mi">2</span><span class="p">}()</span>
+<span class="mh">0x0</span> <span class="n">Array</span><span class="p">{</span><span class="n">Int64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>You can check the type of an object,</p>
+<div class="code julia highlight-default"><div class="highlight"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">typeof</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">Array</span><span class="p">{</span><span class="n">Int64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">typeof</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">==</span><span class="n">Matrix</span><span class="p">{</span><span class="n">Int</span><span class="p">}</span>
+<span class="n">true</span>
+</pre></div>
+</div>
+<p>The typecheck done in the last step confirms that <code class="docutils literal"><span class="pre">A</span></code> is a <code class="docutils literal"><span class="pre">Matrix</span></code>.
+To declare a <code class="docutils literal"><span class="pre">Vector</span></code> (dimension=1),</p>
+<div class="code julia highlight-default"><div class="highlight"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">V</span> <span class="o">=</span> <span class="n">Array</span><span class="p">{</span><span class="n">Int</span><span class="p">,</span> <span class="mi">1</span><span class="p">}()</span>
+<span class="mi">0</span><span class="o">-</span><span class="n">element</span> <span class="n">Array</span><span class="p">{</span><span class="n">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">Array</span><span class="p">{</span><span class="n">Int</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">==</span><span class="n">Vector</span><span class="p">{</span><span class="n">Int</span><span class="p">}</span>
+<span class="n">true</span>
+</pre></div>
+</div>
+<p>For example to represent the color red in RGB in decimal code,</p>
+<div class="code julia highlight-default"><div class="highlight"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span><span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="mi">3</span><span class="o">-</span><span class="n">element</span> <span class="n">Array</span><span class="p">{</span><span class="n">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}:</span>
+ <span class="mi">255</span>
+   <span class="mi">0</span>
+   <span class="mi">0</span>
+</pre></div>
+</div>
+<div class="section" id="how-to-add-values-to-arrays-arbitrarily">
+<h4>How to add values to <code class="docutils literal"><span class="pre">Array</span></code>s arbitrarily?<a class="headerlink" href="#how-to-add-values-to-arrays-arbitrarily" title="Permalink to this headline">¶</a></h4>
+<p>If <code class="docutils literal"><span class="pre">A</span></code> is an <code class="docutils literal"><span class="pre">Int</span></code> type array, <code class="docutils literal"><span class="pre">A=Array{Int,</span> <span class="pre">1}()</span></code>, we can
+populate the array as follows,</p>
+<div class="code julia highlight-default"><div class="highlight"><pre><span></span>julia&gt; A=Array{Int,1}()
+0-element Array{Int64,1}
+
+julia&gt; push!(A,1)
+1-element Array{Int64,1}:
+ 1
+
+julia&gt; for i = 2:5
+           push!(A,i)
+       end
+
+julia&gt; println(A)
+[1,2,3,4,5]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="juliabox">
+<h2>JuliaBox :<a class="headerlink" href="#juliabox" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-to-use-juliabox">
+<h3>How to use JuliaBox?<a class="headerlink" href="#how-to-use-juliabox" title="Permalink to this headline">¶</a></h3>
+<p>Visit the <a class="reference external" href="https://juliabox.com/">JuliaBox</a> page, you can login
+through either of the three accounts, gmail, linkedin or github.</p>
+</div>
+<div class="section" id="some-basic-notebook-usage">
+<h3>Some basic notebook usage.<a class="headerlink" href="#some-basic-notebook-usage" title="Permalink to this headline">¶</a></h3>
+<p>The landing page after login lists the files in the folder and on the
+top right corner you can create a new notebook, preferably
+<code class="docutils literal"><span class="pre">Julia</span> <span class="pre">0.4.6</span></code>.</p>
+<a class="reference internal image-reference" href="_images/PickNotebook.png"><img alt="alternate text" class="align-left" src="_images/PickNotebook.png" style="width: 1273.0px; height: 250.0px;" /></a>
+<p>The cursor will be on the first cell initially and you can write code
+within the cell, to execute hit <code class="docutils literal"><span class="pre">shift+enter</span></code>.</p>
+<a class="reference internal image-reference" href="_images/Screen2.png"><img alt="alternate text" class="align-left" src="_images/Screen2.png" style="width: 1272.0px; height: 250.0px;" /></a>
+<p>There is autocomplete available, key in the characters and hit <code class="docutils literal"><span class="pre">tab</span></code>
+button,</p>
+<a class="reference internal image-reference" href="_images/AC.png"><img alt="alternate text" class="align-left" src="_images/AC.png" style="width: 1177.0px; height: 250.0px;" /></a>
+<p>We can also have Julia to show help for functions, like for e.x.,
+<code class="docutils literal"><span class="pre">?rand</span></code>,</p>
+<a class="reference internal image-reference" href="_images/Help.png"><img alt="alternate text" class="align-left" src="_images/Help.png" style="width: 1162.0px; height: 250.0px;" /></a>
+</div>
+<div class="section" id="how-do-i-plot-in-juliabox">
+<h3>How do I plot in <code class="docutils literal"><span class="pre">JuliaBox</span></code>?<a class="headerlink" href="#how-do-i-plot-in-juliabox" title="Permalink to this headline">¶</a></h3>
+<p>There are various packages available for plotting in <code class="docutils literal"><span class="pre">Julia</span></code>, viz,
+<code class="docutils literal"><span class="pre">Gadfly</span></code>, <code class="docutils literal"><span class="pre">Plotlyjs</span></code>, <code class="docutils literal"><span class="pre">Pyplot</span></code>, <code class="docutils literal"><span class="pre">Plots</span></code> among others. <code class="docutils literal"><span class="pre">Plots</span></code>
+is an interface to many of the other plotting libraries which act as
+backend. To create plots using <code class="docutils literal"><span class="pre">Plots</span></code> you have to select a backend,
+e.x., to select Plotlyjs, run <code class="docutils literal"><span class="pre">plotlyjs()</span></code>,</p>
+<a class="reference internal image-reference" href="_images/Plot1.png"><img alt="alternate text" class="align-left" src="_images/Plot1.png" style="width: 1267.0px; height: 250.0px;" /></a>
+</div>
+<div class="section" id="how-can-i-upload-data-and-access-it-in-my-notebook">
+<h3>How can I upload data and access it in my notebook?<a class="headerlink" href="#how-can-i-upload-data-and-access-it-in-my-notebook" title="Permalink to this headline">¶</a></h3>
+<p>To upload the data use the <code class="docutils literal"><span class="pre">Files</span></code> tab on the main page,</p>
+<a class="reference internal image-reference" href="_images/Upload.png"><img alt="alternate text" class="align-left" src="_images/Upload.png" style="width: 1173.0px; height: 250.0px;" /></a>
+<p>You can either drag-and-drop or use the file selection box to upload
+your data. ** Please note that each account has a space limit of
+500MB. **</p>
+</div>
+<div class="section" id="is-it-possible-to-share-my-notebook-with-others">
+<h3>Is it possible to share my notebook with others?<a class="headerlink" href="#is-it-possible-to-share-my-notebook-with-others" title="Permalink to this headline">¶</a></h3>
+<p>It is possible to share any the notebooks through google drive, firstly
+you have to sync any appropriate folder on Google Drive. This can be
+done using the <code class="docutils literal"><span class="pre">sync</span></code> tab on the main page,</p>
+<a class="reference internal image-reference" href="_images/Gdrive.png"><img alt="alternate text" class="align-left" src="_images/Gdrive.png" style="width: 1173.0px; height: 250.0px;" /></a>
+<p>Hit the <code class="docutils literal"><span class="pre">+</span></code> button under <code class="docutils literal"><span class="pre">Action</span></code> as shown in the above figure, this
+should include the folder within JuliaBox.</p>
+<a class="reference internal image-reference" href="_images/Success.png"><img alt="alternate text" class="align-left" src="_images/Success.png" style="width: 1253.0px; height: 250.0px;" /></a>
+<p>Now that we have a folder names <code class="docutils literal"><span class="pre">JuliaBox</span></code> synced to Google Drive, it
+is time we upload the files to be shared. The only option to transfer
+files to this folder is to open up a terminal and run the <code class="docutils literal"><span class="pre">cp</span></code>
+command,</p>
+<a class="reference internal image-reference" href="_images/CopytoJuliaBox.png"><img alt="alternate text" class="align-left" src="_images/CopytoJuliaBox.png" style="width: 1252.0px; height: 250.0px;" /></a>
+<p>After copying it is required to <code class="docutils literal"><span class="pre">sync</span></code> the folder,</p>
+<a class="reference internal image-reference" href="_images/SyncAfterCopy.png"><img alt="alternate text" class="align-left" src="_images/SyncAfterCopy.png" style="width: 1179.0px; height: 250.0px;" /></a>
+</div>
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting :<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="where-can-i-ask-specific-questions-to-know-how-to-accomplish-anything-you-find-tricky">
+<h3>Where can I ask specific questions to know how to accomplish anything you find tricky?<a class="headerlink" href="#where-can-i-ask-specific-questions-to-know-how-to-accomplish-anything-you-find-tricky" title="Permalink to this headline">¶</a></h3>
+<p>If the question is a &#8220;how to do ...&#8221; type, you can ask a well formulated
+question with code example if possible on <a class="reference external" href="https://groups.google.com/forum/#!forum/julia-users">julia-users
+group</a> or
+StackOverflow (tag as julia-lang). Before posting the question make sure
+you have looked online beforehand for answers.</p>
+</div>
+<div class="section" id="can-t-add-packages-on-julia-installed-on-laptop">
+<h3>Can&#8217;t add packages on Julia installed on laptop.<a class="headerlink" href="#can-t-add-packages-on-julia-installed-on-laptop" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">using</span> <span class="n">DataFrames</span>
+<span class="n">ERROR</span><span class="p">:</span> <span class="n">ArgumentError</span><span class="p">:</span> <span class="n">DataFrames</span> <span class="ow">not</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">path</span>
+<span class="ow">in</span> <span class="n">require</span> <span class="n">at</span> <span class="n">loading</span><span class="o">.</span><span class="n">jl</span><span class="p">:</span><span class="mi">249</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;DataFrames&quot;</span><span class="p">)</span>
+<span class="n">fatal</span><span class="p">:</span> <span class="n">your</span> <span class="n">current</span> <span class="n">branch</span> <span class="s1">&#39;master&#39;</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">have</span> <span class="nb">any</span> <span class="n">commits</span> <span class="n">yet</span>
+<span class="n">ERROR</span><span class="p">:</span> <span class="n">failed</span> <span class="n">process</span><span class="p">:</span> <span class="n">Process</span><span class="p">(</span><span class="n">git</span> <span class="s1">&#39;--git-dir=C:\Users\user\.julia</span><span class="se">\v</span><span class="s1">0.4\.cache\DataArrays&#39;</span> <span class="n">log</span> <span class="o">--</span><span class="nb">all</span> <span class="o">--</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>In this case it most likely is due to corrupt copies of packages. First
+remove the <code class="docutils literal"><span class="pre">.cache</span></code> folder at present in the <code class="docutils literal"><span class="pre">JULIA_PACKAGE</span></code>
+directory which is <code class="docutils literal"><span class="pre">~/.julia</span></code> where <code class="docutils literal"><span class="pre">~</span></code> is the home directory. Then
+do a <code class="docutils literal"><span class="pre">Pkg.update()</span></code>.</p>
+</div>
+<div class="section" id="where-can-i-ask-specific-questions-regarding-issues-or-buggy-behavior">
+<h3>Where can I ask specific questions regarding issues or buggy behavior?<a class="headerlink" href="#where-can-i-ask-specific-questions-regarding-issues-or-buggy-behavior" title="Permalink to this headline">¶</a></h3>
+<p>Please search for possibly already answered questions similar to yours
+on <a class="reference external" href="https://groups.google.com/forum/#!forum/julia-users">julia-users
+group</a> or
+<a class="reference external" href="http://stackoverflow.com/search?q=julia-lang">StackOverflow</a>.</p>
+<p>If you are convinced it to be a buggy behavior you can file an issue on
+the corresponding <a class="reference external" href="http://pkg.julialang.org/">julia package
+repository</a> or <a class="reference external" href="https://github.com/JuliaLang/julia">julia lang
+repository</a>.</p>
+</div>
+<div class="section" id="i-am-using-juliabox-0-4-6-for-a-homework-assignment-and-when-i-call-functions-from-python-like-pyplot-i-get-an-error-any-ideas-i-have-tried-adding-pyplot-package-and-pycall-i-have-also-downloaded-python-2-7-to-my-computer-i-need-to-use-the-clf-function-from-pyplot">
+<h3>I am using JuliaBox (0.4.6) for a homework assignment and when I call functions from Python like PyPlot, I get an error. Any ideas? I have tried adding Pyplot package and PyCall. I have also downloaded Python 2.7 to my computer. I need to use the clf() function from Pyplot.<a class="headerlink" href="#i-am-using-juliabox-0-4-6-for-a-homework-assignment-and-when-i-call-functions-from-python-like-pyplot-i-get-an-error-any-ideas-i-have-tried-adding-pyplot-package-and-pycall-i-have-also-downloaded-python-2-7-to-my-computer-i-need-to-use-the-clf-function-from-pyplot" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Error</span><span class="p">:</span>
+<span class="n">INFO</span><span class="p">:</span> <span class="n">Recompiling</span> <span class="n">stale</span> <span class="n">cache</span> <span class="n">file</span> <span class="n">PyPlot</span><span class="o">.</span><span class="n">ji</span> <span class="k">for</span> <span class="n">module</span> <span class="n">PyPlot</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Due to a precompilation issue on Julia and JuliaBox this error sometimes
+happens for packages that were <code class="docutils literal"><span class="pre">Pkg.add()</span></code>ed. To use the default
+PyPlot installed delete your <code class="docutils literal"><span class="pre">~/.julia</span></code>. You can do this by going to
+console and typing <code class="docutils literal"><span class="pre">rm</span> <span class="pre">-rf</span> <span class="pre">~/.julia</span></code> or go to settings page and click
+on &#8220;Reset my packages&#8221; for instructions are available
+<a class="reference external" href="https://docs.google.com/presentation/d/1G9ilT8qGbuIrT1o7QW-Pahbje-RBKlHDr9e4RqasUJY/edit#slide=id.p">here</a>.</p>
+<p>The precompilation issue will be fixed soon. The above instruction is a
+temporary workaround for now.</p>
+</div>
+<div class="section" id="on-juliabox-when-ever-i-try-pkg-status-or-pkg-add-i-get-the-following-error-message">
+<h3>On <code class="docutils literal"><span class="pre">JuliaBox</span></code> when ever I try <code class="docutils literal"><span class="pre">Pkg.status()</span></code> or <code class="docutils literal"><span class="pre">Pkg.add()</span></code> I get the following error message,<a class="headerlink" href="#on-juliabox-when-ever-i-try-pkg-status-or-pkg-add-i-get-the-following-error-message" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">INFO</span><span class="p">:</span> <span class="n">Initializing</span> <span class="n">package</span> <span class="n">repository</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">juser</span><span class="o">/.</span><span class="n">julia</span><span class="o">/</span><span class="n">v0</span><span class="o">.</span><span class="mi">4</span>
+<span class="n">INFO</span><span class="p">:</span> <span class="n">Cloning</span> <span class="n">METADATA</span> <span class="kn">from</span> <span class="nn">git</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">JuliaLang</span><span class="o">/</span><span class="n">METADATA</span><span class="o">.</span><span class="n">jl</span>
+<span class="n">Fatal</span><span class="p">:</span> <span class="n">cannot</span> <span class="n">create</span> <span class="n">directory</span> <span class="n">at</span> <span class="s1">&#39;Interpolations/versions/0.3.0&#39;</span><span class="p">:</span> <span class="n">No</span> <span class="n">space</span> <span class="n">left</span> <span class="n">on</span> <span class="n">device</span>
+<span class="ne">Warning</span><span class="p">:</span> <span class="n">Clone</span> <span class="n">succeeded</span><span class="p">,</span> <span class="n">but</span> <span class="n">checkout</span> <span class="n">failed</span><span class="o">.</span>
+<span class="n">You</span> <span class="n">can</span> <span class="n">inspect</span> <span class="n">what</span> <span class="n">was</span> <span class="n">checked</span> <span class="n">out</span> <span class="k">with</span> <span class="s1">&#39;git status&#39;</span>
+<span class="n">And</span> <span class="n">retry</span> <span class="n">the</span> <span class="n">checkout</span> <span class="k">with</span> <span class="s1">&#39;git checkout -h HEAD&#39;</span>
+</pre></div>
+</div>
+<p>As mentioned in the error message you have exceeded the allocated memory
+of 500MB. Please delete some of your data and try again.</p>
+</div>
+</div>
+<div class="section" id="data-science-machine-learning">
+<h2>Data Science, Machine learning<a class="headerlink" href="#data-science-machine-learning" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-to-solve-a-simple-linear-optimization-problem">
+<h3>How to solve a simple linear optimization problem?<a class="headerlink" href="#how-to-solve-a-simple-linear-optimization-problem" title="Permalink to this headline">¶</a></h3>
+<p>This is a diet problem where one has to decide what nutritionally sound
+food to eat and in most cost effective manner, consider the data below
+which shows the nutrient values and cost of various food items (this is
+an example problem in MIT 15053),</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="12%" />
+<col width="18%" />
+<col width="19%" />
+<col width="16%" />
+<col width="15%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">Hamburger</th>
+<th class="head">Large Hamburger</th>
+<th class="head">Chicken Sandwich</th>
+<th class="head">Chicken Salad</th>
+<th class="head">French Fries</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Total Calories</td>
+<td>250</td>
+<td>770</td>
+<td>360</td>
+<td>190</td>
+<td>230</td>
+</tr>
+<tr class="row-odd"><td>Fat Calories</td>
+<td>80</td>
+<td>360</td>
+<td>145</td>
+<td>45</td>
+<td>100</td>
+</tr>
+<tr class="row-even"><td>Protein</td>
+<td>30</td>
+<td>45</td>
+<td>15</td>
+<td>25</td>
+<td>3</td>
+</tr>
+<tr class="row-odd"><td>Sodium</td>
+<td>480</td>
+<td>1170</td>
+<td>800</td>
+<td>580</td>
+<td>160</td>
+</tr>
+<tr class="row-even"><td>Cost per unit in $</td>
+<td>1.0</td>
+<td>3.0</td>
+<td>2.5</td>
+<td>3.0</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="some-of-the-constraints-to-be-considered-are">
+<h3>Some of the constraints to be considered are,<a class="headerlink" href="#some-of-the-constraints-to-be-considered-are" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Minimum calories is 600 and maximum calories is 900.</li>
+<li>The maximum sodium content is 1150.</li>
+<li>Minimum protein content should be 30.</li>
+<li>40% of the calories must be from fat.</li>
+</ol>
+</div>
+<div class="section" id="how-can-we-solve-this-in-julia">
+<h3>How can we solve this in Julia?<a class="headerlink" href="#how-can-we-solve-this-in-julia" title="Permalink to this headline">¶</a></h3>
+<p>Firstly for the algebraic formulation of the problem,</p>
+<ul>
+<li><p class="first">Decision variables : <code class="docutils literal"><span class="pre">H</span></code>, <code class="docutils literal"><span class="pre">L</span></code>, <code class="docutils literal"><span class="pre">C</span></code>, <code class="docutils literal"><span class="pre">S</span></code> and <code class="docutils literal"><span class="pre">F</span></code>, number of
+Hamburgers, Large Hamburgers, chicken sandwiches, salad and french
+fries respectively.</p>
+</li>
+<li><p class="first">Objective function : <code class="docutils literal"><span class="pre">min</span> <span class="pre">H+3L+2.5C+3S+F</span></code></p>
+</li>
+<li><p class="first">Constraints :</p>
+<blockquote>
+<div><p><code class="docutils literal"><span class="pre">50*H+770*L+360*C+190*S+230*F&gt;=600</span></code></p>
+<p><code class="docutils literal"><span class="pre">50*H+770*L+360*C+190*S+230*F&lt;=900</span></code></p>
+<p><code class="docutils literal"><span class="pre">30*H+45*L+15*C+25*S+3*F&gt;=30</span></code></p>
+<p><code class="docutils literal"><span class="pre">480*H+1770*L+800*C+580*S+160*F&lt;=1150</span></code></p>
+<p><code class="docutils literal"><span class="pre">-20*H+52*L+1*C-31*S+8*F&lt;=0</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+<p>Next to solve this problem using <code class="docutils literal"><span class="pre">JuMP</span></code>,</p>
+<ol class="arabic">
+<li><p class="first">Initialize a model <code class="docutils literal"><span class="pre">m</span></code>,</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">m</span> <span class="o">=</span> <span class="n">Model</span><span class="p">()</span>
+<span class="n">Feasibility</span> <span class="n">problem</span> <span class="k">with</span><span class="p">:</span>
+<span class="o">*</span> <span class="mi">0</span> <span class="n">linear</span> <span class="n">constraints</span>
+<span class="o">*</span> <span class="mi">0</span> <span class="n">variables</span>
+<span class="n">Solver</span> <span class="ow">is</span> <span class="n">default</span> <span class="n">solver</span>
+</pre></div>
+</div>
+<p>We can also select a solver, <code class="docutils literal"><span class="pre">m</span> <span class="pre">=</span> <span class="pre">Model(solver=GLPKSolverLP())</span></code> for
+which the package <code class="docutils literal"><span class="pre">GLPKMathProgInterface</span></code> needs to be installed.</p>
+</li>
+<li><p class="first">Model the decision variables,</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="nd">@variable</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">H</span><span class="p">)</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="nd">@variable</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">L</span><span class="p">)</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="nd">@variable</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="nd">@variable</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">S</span><span class="p">)</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="nd">@variable</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the objective</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="nd">@objective</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">Min</span><span class="p">,</span> <span class="n">H</span><span class="o">+</span><span class="mi">3</span><span class="n">L</span><span class="o">+</span><span class="mf">2.5</span><span class="n">C</span><span class="o">+</span><span class="mi">3</span><span class="n">S</span><span class="o">+</span><span class="n">F</span><span class="p">)</span>
+<span class="n">H</span> <span class="o">+</span> <span class="mi">3</span> <span class="n">L</span> <span class="o">+</span> <span class="mf">2.5</span> <span class="n">C</span> <span class="o">+</span> <span class="mi">3</span> <span class="n">S</span> <span class="o">+</span> <span class="n">F</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the constraints</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>julia&gt; @constraint(m, -20*H+52*L+1*C-31*S+8*F&lt;=0)
+-20 H + 52 L + C - 31 S + 8 F ≤ 0
+julia&gt; @constraint(m, 250*H+770*L+360*C+190*S+230*F&gt;=600)
+250 H + 770 L + 360 C + 190 S + 230 F ≥ 600
+julia&gt; @constraint(m, 250*H+770*L+360*C+190*S+230*F&lt;=900)
+250 H + 770 L + 360 C + 190 S + 230 F ≤ 900
+julia&gt; @constraint(m, 30*H+45*L+15*C+25*S+3*F&gt;=30)
+30 H + 45 L + 15 C + 25 S + 3 F ≥ 30
+julia&gt; @constraint(m, 480*H+1770*L+800*C+580*S+160*F&lt;=1150)
+480 H + 1770 L + 800 C + 580 S + 160 F ≤ 1150
+julia&gt; @constraint(m, H&gt;=0)
+H ≥ 0
+julia&gt; @constraint(m, L&gt;=0)
+L ≥ 0
+julia&gt; @constraint(m, C&gt;=0)
+C ≥ 0
+julia&gt; @constraint(m, S&gt;=0)
+S ≥ 0
+julia&gt; @constraint(m, F&gt;=0)
+F ≥ 0
+</pre></div>
+</div>
+</li>
+<li><p class="first">Solve the model</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">status</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>To see the results,</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">println</span><span class="p">(</span><span class="s2">&quot;Objective value: &quot;</span><span class="p">,</span> <span class="n">getobjectivevalue</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
+<span class="n">Objective</span> <span class="n">value</span><span class="p">:</span> <span class="mf">2.400568181818183</span>
+</pre></div>
+</div>
+<p>Hence 2.4$ needs to be spent to have a meal with the set of constraints.
+To see how many units of each food items to be had,</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">println</span><span class="p">(</span><span class="s2">&quot;The number hamburgers = &quot;</span><span class="p">,</span> <span class="n">getvalue</span><span class="p">(</span><span class="n">H</span><span class="p">))</span>
+<span class="n">The</span> <span class="n">number</span> <span class="n">hamburgers</span> <span class="o">=</span> <span class="mf">2.3934659090909087</span>
+</pre></div>
+</div>
+<p>Note that it is impossible to buy 2.3 units of hamburger, for this we
+can set restrict the variables to be <code class="docutils literal"><span class="pre">Integer</span></code>s.</p>
+</div>
+<div class="section" id="how-to-perform-simple-statistical-analysis-on-the-structured-data-stored-in-a-csv-file">
+<h3>How to perform simple statistical analysis on the structured data stored in a csv file?<a class="headerlink" href="#how-to-perform-simple-statistical-analysis-on-the-structured-data-stored-in-a-csv-file" title="Permalink to this headline">¶</a></h3>
+<p>In a file brain.csv which has a header row for column names like shown
+below,</p>
+<div class="line-block">
+<div class="line">Gender,FSIQ,VIQ,PIQ,Weight,Height,MRI_Count</div>
+<div class="line">Female,133,132,124,118,64.5,816932</div>
+<div class="line">Male,140,150,124,NaN,72.5,1001121</div>
+<div class="line">Male,139,123,150,143,73.3,1038437</div>
+<div class="line">Male,133,129,128,172,68.8,965353</div>
+<div class="line">Female,137,132,134,147,65.0,951545</div>
+</div>
+<div class="section" id="reading-the-data-from-csv">
+<h4>Reading the data from csv,<a class="headerlink" href="#reading-the-data-from-csv" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">readtable</span><span class="p">(</span><span class="s2">&quot;brain.csv&quot;</span><span class="p">,</span> <span class="n">nastrings</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;NaN&quot;</span><span class="p">],</span> <span class="n">header</span><span class="o">=</span><span class="n">true</span><span class="p">)</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="12%" />
+<col width="11%" />
+<col width="11%" />
+<col width="15%" />
+<col width="15%" />
+<col width="21%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Gender</th>
+<th class="head">FSIQ</th>
+<th class="head">VIQ</th>
+<th class="head">PIQ</th>
+<th class="head">Weight</th>
+<th class="head">Height</th>
+<th class="head">MRI_Count</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Female</td>
+<td>133</td>
+<td>132</td>
+<td>124</td>
+<td>118</td>
+<td>64.5</td>
+<td>816932</td>
+</tr>
+<tr class="row-odd"><td>Male</td>
+<td>140</td>
+<td>150</td>
+<td>124</td>
+<td>NA</td>
+<td>72.5</td>
+<td>1001121</td>
+</tr>
+<tr class="row-even"><td>Male</td>
+<td>139</td>
+<td>123</td>
+<td>150</td>
+<td>143</td>
+<td>73.3</td>
+<td>1038437</td>
+</tr>
+<tr class="row-odd"><td>Male</td>
+<td>133</td>
+<td>129</td>
+<td>128</td>
+<td>172</td>
+<td>68.8</td>
+<td>965353</td>
+</tr>
+<tr class="row-even"><td>Female</td>
+<td>137</td>
+<td>132</td>
+<td>134</td>
+<td>147</td>
+<td>65.0</td>
+<td>951545</td>
+</tr>
+</tbody>
+</table>
+<p>To find the mean of a column,</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mean</span><span class="p">(</span><span class="n">df</span><span class="p">[:</span><span class="n">Weight</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>This results in <code class="docutils literal"><span class="pre">NA</span></code> since one of the entries is not available. To
+deal with this,</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mean</span><span class="p">(</span><span class="n">dropna</span><span class="p">(</span><span class="n">df</span><span class="p">[:</span><span class="n">Weight</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p>which gives the value <code class="docutils literal"><span class="pre">145.0</span></code>.</p>
+<p>To find the ratio of <code class="docutils literal"><span class="pre">Weight</span></code> to <code class="docutils literal"><span class="pre">MRI_Count</span></code>, let us say for only
+the <code class="docutils literal"><span class="pre">Female</span></code> class,</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">fem</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[:</span><span class="n">Gender</span><span class="p">]</span><span class="o">.==</span><span class="s2">&quot;Female&quot;</span><span class="p">,:]</span>
+</pre></div>
+</div>
+<p>Another useful function is <code class="docutils literal"><span class="pre">by()</span></code> using which we can find the means of
+<code class="docutils literal"><span class="pre">Height</span></code> for both the <code class="docutils literal"><span class="pre">Gender</span></code>s,</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">by</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="p">[:</span><span class="n">Gender</span><span class="p">],</span> <span class="n">df</span> <span class="o">-&gt;</span> <span class="n">mean</span><span class="p">(</span><span class="n">df</span><span class="p">[:</span><span class="n">Height</span><span class="p">]))</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="42%" />
+<col width="38%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">Gender</th>
+<th class="head">x1</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>Female</td>
+<td>64.75</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>Male</td>
+<td>71.53</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="how-to-fit-a-set-of-points-to-a-line">
+<h3>How to fit a set of points to a line?<a class="headerlink" href="#how-to-fit-a-set-of-points-to-a-line" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">Y</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">X</th>
+<th class="head">Y</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>3</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">OLS</span> <span class="o">=</span> <span class="n">glm</span><span class="p">(</span><span class="n">Y</span> <span class="o">~</span> <span class="n">X</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">Normal</span><span class="p">(),</span> <span class="n">IdentityLink</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>The output is as shown below,</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Formula</span><span class="p">:</span> <span class="n">Y</span> <span class="o">~</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">X</span>
+
+<span class="n">Coefficients</span><span class="p">:</span>
+              <span class="n">Estimate</span> <span class="n">Std</span><span class="o">.</span><span class="n">Error</span>  <span class="n">z</span> <span class="n">value</span> <span class="n">Pr</span><span class="p">(</span><span class="o">&gt;|</span><span class="n">z</span><span class="o">|</span><span class="p">)</span>
+<span class="p">(</span><span class="n">Intercept</span><span class="p">)</span>  <span class="o">-</span><span class="mf">0.666667</span>   <span class="mf">0.62361</span> <span class="o">-</span><span class="mf">1.06904</span>   <span class="mf">0.2850</span>
+<span class="n">X</span>                  <span class="mf">2.5</span>  <span class="mf">0.288675</span>  <span class="mf">8.66025</span>   <span class="o">&lt;</span><span class="mi">1</span><span class="n">e</span><span class="o">-</span><span class="mi">17</span>
+</pre></div>
+</div>
+<p>To predict from the model,</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">=</span><span class="n">predict</span><span class="p">(</span><span class="n">OLS</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Let us plot the data and the predicted values to how good the fit is,</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Gadfly</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">layer</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="n">y</span><span class="o">=</span><span class="n">p</span><span class="p">,</span> <span class="n">Geom</span><span class="o">.</span><span class="n">line</span><span class="p">),</span> <span class="n">layer</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="p">[:</span><span class="n">X</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">data</span><span class="p">[:</span><span class="n">Y</span><span class="p">],</span> <span class="n">Geom</span><span class="o">.</span><span class="n">point</span><span class="p">))</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/OLS.png"><img alt="alternate text" class="align-left" src="_images/OLS.png" style="width: 535.0px; height: 250.0px;" /></a>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">FAQs</a><ul>
+<li><a class="reference internal" href="#julia-basics">Julia Basics</a><ul>
+<li><a class="reference internal" href="#getting-started">Getting Started :</a><ul>
+<li><a class="reference internal" href="#how-to-start-using-julia">How to start using Julia?</a></li>
+<li><a class="reference internal" href="#are-there-any-learning-material-available-online">Are there any learning material available online?</a></li>
+<li><a class="reference internal" href="#how-to-install-a-package">How to install a package?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#basics-of-programming-in-julia">Basics of programming in Julia</a><ul>
+<li><a class="reference internal" href="#julia-variables">Julia Variables</a></li>
+<li><a class="reference internal" href="#julia-integers-and-floating-point-numbers">Julia Integers and Floating-Point Numbers</a></li>
+<li><a class="reference internal" href="#control-flow">Control flow</a><ul>
+<li><a class="reference internal" href="#how-to-calculate-the-sum-of-10-integers-1-to-10">How to calculate the sum of 10 integers, 1 to 10?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#basic-datastructures-in-julia">Basic datastructures in Julia</a><ul>
+<li><a class="reference internal" href="#how-to-add-values-to-arrays-arbitrarily">How to add values to <code class="docutils literal"><span class="pre">Array</span></code>s arbitrarily?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#juliabox">JuliaBox :</a><ul>
+<li><a class="reference internal" href="#how-to-use-juliabox">How to use JuliaBox?</a></li>
+<li><a class="reference internal" href="#some-basic-notebook-usage">Some basic notebook usage.</a></li>
+<li><a class="reference internal" href="#how-do-i-plot-in-juliabox">How do I plot in <code class="docutils literal"><span class="pre">JuliaBox</span></code>?</a></li>
+<li><a class="reference internal" href="#how-can-i-upload-data-and-access-it-in-my-notebook">How can I upload data and access it in my notebook?</a></li>
+<li><a class="reference internal" href="#is-it-possible-to-share-my-notebook-with-others">Is it possible to share my notebook with others?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting :</a><ul>
+<li><a class="reference internal" href="#where-can-i-ask-specific-questions-to-know-how-to-accomplish-anything-you-find-tricky">Where can I ask specific questions to know how to accomplish anything you find tricky?</a></li>
+<li><a class="reference internal" href="#can-t-add-packages-on-julia-installed-on-laptop">Can&#8217;t add packages on Julia installed on laptop.</a></li>
+<li><a class="reference internal" href="#where-can-i-ask-specific-questions-regarding-issues-or-buggy-behavior">Where can I ask specific questions regarding issues or buggy behavior?</a></li>
+<li><a class="reference internal" href="#i-am-using-juliabox-0-4-6-for-a-homework-assignment-and-when-i-call-functions-from-python-like-pyplot-i-get-an-error-any-ideas-i-have-tried-adding-pyplot-package-and-pycall-i-have-also-downloaded-python-2-7-to-my-computer-i-need-to-use-the-clf-function-from-pyplot">I am using JuliaBox (0.4.6) for a homework assignment and when I call functions from Python like PyPlot, I get an error. Any ideas? I have tried adding Pyplot package and PyCall. I have also downloaded Python 2.7 to my computer. I need to use the clf() function from Pyplot.</a></li>
+<li><a class="reference internal" href="#on-juliabox-when-ever-i-try-pkg-status-or-pkg-add-i-get-the-following-error-message">On <code class="docutils literal"><span class="pre">JuliaBox</span></code> when ever I try <code class="docutils literal"><span class="pre">Pkg.status()</span></code> or <code class="docutils literal"><span class="pre">Pkg.add()</span></code> I get the following error message,</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#data-science-machine-learning">Data Science, Machine learning</a><ul>
+<li><a class="reference internal" href="#how-to-solve-a-simple-linear-optimization-problem">How to solve a simple linear optimization problem?</a></li>
+<li><a class="reference internal" href="#some-of-the-constraints-to-be-considered-are">Some of the constraints to be considered are,</a></li>
+<li><a class="reference internal" href="#how-can-we-solve-this-in-julia">How can we solve this in Julia?</a></li>
+<li><a class="reference internal" href="#how-to-perform-simple-statistical-analysis-on-the-structured-data-stored-in-a-csv-file">How to perform simple statistical analysis on the structured data stored in a csv file?</a><ul>
+<li><a class="reference internal" href="#reading-the-data-from-csv">Reading the data from csv,</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#how-to-fit-a-set-of-points-to-a-line">How to fit a set of points to a line?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to JuliaBox FAQs&#8217;s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/FAQs.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Abhijith.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/FAQs.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
