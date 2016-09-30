@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # JuliaBox FAQs documentation build configuration file, created by
-# sphinx-quickstart on Fri Sep 30 16:15:59 2016.
+# sphinx-quickstart on Fri Sep 30 19:40:25 2016.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -29,10 +29,7 @@ import os
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.doctest',
     'sphinx.ext.mathjax',
-    'sphinx.ext.githubpages',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
